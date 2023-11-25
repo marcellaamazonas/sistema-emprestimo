@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const solicitacaoEmprestimo_1 = require("./solicitacaoEmprestimo");
+const solicitante_1 = require("./solicitante");
+const emprestimoAutomovel_1 = require("./emprestimoAutomovel");
+const emprestimoEstudantil_1 = require("./emprestimoEstudantil");
+const emprestimoPessoal_1 = require("./emprestimoPessoal");
+const solicitante1 = new solicitante_1.Solicitante(1, "Marcella", 30, 2000, true, true);
+const solicitante2 = new solicitante_1.Solicitante(2, "Victor", 33, 4000, true, true);
+const solicitante3 = new solicitante_1.Solicitante(3, "Maria", 89, 700, true, true);
+const solicitacoes = new solicitacaoEmprestimo_1.SolicitacaoEmprestimo(1);
+solicitacoes.add(new emprestimoPessoal_1.EmprestimoPessoal(1, 10000, 10, solicitante1));
+solicitacoes.add(new emprestimoAutomovel_1.EmprestimoAutomovel(2, 1000, 9, solicitante2));
+solicitacoes.add(new emprestimoEstudantil_1.EmprestimoEstudantil(3, 7800, 11, solicitante3));
+solicitacoes.processar();
+solicitacoes.listar();
